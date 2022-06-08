@@ -5,8 +5,11 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { positions } from '@mui/system';
-import '../style/store.scss'
-import StoreContainer from './store-container'
+import '../style/store.scss';
+import StoreContainer from './store/store-container';
+import weapons from './inventory/weapons';
+import clothing from './inventory/clothing';
+import food from './inventory/food';
 
 
 function TabPanel(props) {
@@ -50,22 +53,23 @@ export default function BasicTabs() {
     };
 
     return (
-        <Box sx={{ width: '100%', postion: "relative", mt: "60px" }}>
+        <Box sx={{ width: '100%', postion: "fixed", mt: "60px" }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+                <Tabs value={value} onChange={handleChange} orintation="vertical">
                     <Tab label="Weapons" {...a11yProps(0)} />
                     <Tab label="Clothing" {...a11yProps(1)} />
                     <Tab label="Food" {...a11yProps(2)} />
                 </Tabs>
             </Box>
-            <TabPanel value={value} index={0}>
-                <StoreContainer />
+            <TabPanel value={value} index={0} >
+                <StoreContainer items={weapons} />
+
             </TabPanel>
             <TabPanel value={value} index={1}>
-                Clothing
+                <StoreContainer items={clothing} />
             </TabPanel>
             <TabPanel value={value} index={2}>
-                Food
+                <StoreContainer items={food} />
             </TabPanel>
         </Box>
 

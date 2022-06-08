@@ -11,9 +11,10 @@ export default class App extends Component {
         {/* <h1>DevCamp React Starter</h1>
         <h2>React + React Router</h2> */}
         <div className="logo">
-          SDM
+          TWT
         </div>
-        <div className="title">Welcome to the Super Duper Mart!</div>
+        <div className="title">Welcome to The Wasteland Traders!</div>
+        <button className="btn-app"><a href="/store">Continue</a></button>
       </div>
 
     );
